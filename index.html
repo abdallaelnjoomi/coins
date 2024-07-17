@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+    rel="stylesheet">
+  <title>Coin-flip</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: linear-gradient(90deg, #8EA4D2, #6279B8, #49516F, #496F5D, #4C9F70);
+      gap: 10px;
+      font-family: "Edu AU VIC WA NT Hand", cursive;
+    }
+
+    h1 {
+      border: none;
+      padding: 4px;
+      font-size: larger;
+    }
+
+    img {
+      width: 50px;
+    }
+
+    button {
+      background: rgba(255, 217, 0, 0);
+      border: none;
+      cursor: pointer;
+
+
+    }
+
+    button>div>img {
+      border-radius: 50%;
+      padding: .8rem;
+      background-image: linear-gradient(90deg, #8EA4D2, #6279B8, #49516F, #496F5D, #4C9F70);
+      width: 100px;
+    }
+
+    span:nth-of-type(1) {
+      color: #4c9f70aa;
+    }
+
+    span:nth-of-type(2) {
+      color: #8EA4D2aa;
+    }
+  </style>
+</head>
+
+<body id="body">
+
+  <h1>Flip <span>The</span> Coins <span>&</span> Guess</h1>
+  <button onclick="displayImg(); " id="image">
+    <div>
+      <img src="flipping.png" alt="heads-coin">
+    </div>
+  </button>
+  <div id="result"></div>
+
+  <script>
+    alert("Let's play")
+
+    function displayImg() {
+      let flip = Math.random() * 1;
+      flip = Math.round(flip);
+      if (flip <= 0) {
+        let img = document.createElement('img');
+        img.src = 'heads-coin.png';
+        document.getElementById('result').appendChild(img);
+      } else {
+        img = document.createElement('img');
+        document.getElementById('result').appendChild(img);
+        img.src = 'tails-coin.png';
+      }
+    }
+  </script>
+</body>
+
+</html>
